@@ -22,8 +22,8 @@ public class Pelota {
 	}
 	
 	public void mover(long t) {
-		double dx = t * vx / 1000000000d;
-		double dy = t * vy / 1000000000d;
+		double dx = t * vx / 200000000d;
+		double dy = t * vy / 200000000d;
 		x += dx;
 		y += dy;
 		if (x <= 0 || x + diametro >= dim.width)
