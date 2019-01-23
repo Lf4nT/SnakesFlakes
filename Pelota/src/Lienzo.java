@@ -42,10 +42,8 @@ public class Lienzo extends JPanel {
 	@Override
 	protected void paintComponent(Graphics g) {
 		g.setColor(Color.WHITE);
-//		g.fillRect(0, 0, getWidth(), getHeight());
 		g.fillRect(0, 0, d.width, d.height);
 		pelota.paint(g);
 		g.setColor(Color.BLACK);
-//		g.drawString("tiempo: " + t , 10, 10);
 	}
 }
