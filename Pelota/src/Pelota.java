@@ -11,7 +11,7 @@ public class Pelota {
 	private double y;
 	private int diametro;
 	private Dimension dim;
-
+	
 	public Pelota(int radio, double x, double y, double d, double v, Dimension dim) {
 		this.x = x - radio;
 		this.y = y - radio;
@@ -20,7 +20,7 @@ public class Pelota {
 		diametro = 2 * radio;
 		this.dim = dim;
 	}
-
+	
 	public void mover(long t) {
 		double dx = t * vx / 200000000d;
 		double dy = t * vy / 200000000d;
@@ -31,10 +31,10 @@ public class Pelota {
 		else if (y <= 0 || y + diametro >= dim.height)
 			vy *= -1;
 	}
-
+	
 	public void paint(Graphics g) {
 		g.setColor(Color.BLACK);
 		g.drawOval((int) x, (int) y, diametro, diametro);
 	}
-
+	
 }
