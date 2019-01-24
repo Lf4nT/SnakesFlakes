@@ -6,15 +6,15 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class Lienzo extends JPanel {
+public class lienzo extends JPanel {
 
 	private Dimension d;
 	private Thread t;
-	private Pelota pelota;
+	private pelota pelota;
 
-	public Lienzo(int w, int h) {
+	public lienzo(int w, int h) {
 		d = new Dimension(w, h);
-		pelota = new Pelota(50, 100, 100, (float) Math.PI / 4, 100, d);
+		pelota = new pelota(Color.RED, 50, 100, 100, (float) Math.PI / 4, 100, d);
 	}
 
 	@Override
@@ -23,17 +23,14 @@ public class Lienzo extends JPanel {
 	}
 
 	public void iniciarAnimacion() {
-		t = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				long t0 = System.nanoTime(), t1, t;
-				while (true) {
-					t1 = System.nanoTime();
-					t = t1 - t0;
-					t0 = t1;
-					pelota.mover(t);
-					repaint();
-				}
+		t = new Thread(() -> {
+			long t0 = System.nanoTime(), t1, t;
+			while (true) {
+				t1 = System.nanoTime();
+				t = t1 - t0;
+				t0 = t1;
+				pelota.mover(t);
+				repaint();
 			}
 		});
 		t.start();
@@ -41,7 +38,7 @@ public class Lienzo extends JPanel {
 
 	@Override
 	protected void paintComponent(Graphics g) {
-		g.setColor(Color.WHITE);
+		g.setColor(Color.GREEN);
 		g.fillRect(0, 0, d.width, d.height);
 		pelota.paint(g);
 		g.setColor(Color.BLACK);
