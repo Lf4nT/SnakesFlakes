@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public abstract class juego {
 
 	private lienzo lienzo;
-
+	
 	public juego(lienzo lienzo) {
 		this.lienzo = lienzo;
 	}
@@ -13,13 +13,9 @@ public abstract class juego {
 	public lienzo getLienzo() {
 		return lienzo;
 	}
-
-	public static void siguiente(long ns) {
-
-	}
-
-	public static void render(Graphics g) {
-
-	}
-
+	
+	public abstract void siguiente(long ns);
+	
+	public abstract void render(Graphics g);
+	
 }
