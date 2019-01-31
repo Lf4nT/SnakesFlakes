@@ -2,15 +2,15 @@ package juego;
 
 import java.awt.Graphics;
 
-public abstract class juego {
+public abstract class Juego {
 
-	private lienzo lienzo;
+	private Lienzo lienzo;
 	
-	public juego(lienzo lienzo) {
+	public Juego(Lienzo lienzo) {
 		this.lienzo = lienzo;
 	}
 
-	public lienzo getLienzo() {
+	public Lienzo getLienzo() {
 		return lienzo;
 	}
 	

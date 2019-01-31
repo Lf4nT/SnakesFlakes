@@ -7,15 +7,15 @@ import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class lienzo extends JPanel {
+public class Lienzo extends JPanel {
 
 	private Dimension d;
 	private Thread t;
-	private juego juego;
+	private Juego juego;
 	private BufferedImage buffer;
 	private Graphics g;
 	
-	public lienzo(int w, int h) {
+	public Lienzo(int w, int h) {
 		d = new Dimension(w, h);
 		buffer = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
 		g = buffer.createGraphics();
@@ -27,7 +27,7 @@ public class lienzo extends JPanel {
 	}
 	
 	public void iniciarAnimacion() {
-		juego = new pelotasLocas(this, 100);
+		juego = new PelotasLocas(this, 100);
 		t = new Thread(() -> {
 			long t0 = System.nanoTime(), t1, t;
 			while(true) {

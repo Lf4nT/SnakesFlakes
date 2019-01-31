@@ -4,17 +4,17 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
 
-public class pelotasLocas extends juego {
+public class PelotasLocas extends Juego {
 
 	private static final int MINVEL = 30;
 	private static final int MAXVEL = 200;
 	private static final Random r = new Random();
 	
-	private pelota [] pelotas;
+	private Pelota [] pelotas;
 	
-	public pelotasLocas(lienzo lienzo, int numeroPelotas) {
+	public PelotasLocas(Lienzo lienzo, int numeroPelotas) {
 		super(lienzo);
-		pelotas = new pelota[numeroPelotas];
+		pelotas = new Pelota[numeroPelotas];
 		
 		int tamRef = Math.max(lienzo.getWidth(), lienzo.getHeight());
 		int minRadio = (int) (tamRef * 0.02);
@@ -30,7 +30,7 @@ public class pelotasLocas extends juego {
 			int y = r.nextInt(ymax - xymin + 1) + xymin;
 			double dir = r.nextDouble() * 2 * Math.PI;
 			double vel = r.nextInt(MAXVEL - MINVEL + 1) + MINVEL;
-			pelotas[i] = new pelota(color, radio, x, y, dir, vel, lienzo.getSize());
+			pelotas[i] = new Pelota(color, radio, x, y, dir, vel, lienzo.getSize());
 		}
 	}
 	public void siguiente(long ns) {

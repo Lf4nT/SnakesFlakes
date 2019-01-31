@@ -3,13 +3,13 @@ package juego;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
-public class main{
+public class Main{
 	
 	public static void main(String[] args) {
-		lienzo lienzo;
+		Lienzo lienzo;
 		JFrame frame = new JFrame("Pelotas Locas");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		lienzo = new lienzo(900, 650);
+		lienzo = new Lienzo(900, 650);
 		frame.add(lienzo);
 		frame.pack();
 		frame.setLocationRelativeTo(null);

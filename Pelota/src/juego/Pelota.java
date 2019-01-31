@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
-public class pelota {
+public class Pelota {
 
 	private double vx;
 	private double vy;
@@ -16,7 +16,7 @@ public class pelota {
 	private int xmax;
 	private int ymax;
 	
-	public pelota(Color color, int radio, int x, int y, double d, double v, Dimension dim) {
+	public Pelota(Color color, int radio, int x, int y, double d, double v, Dimension dim) {
 		this.color = color;
 		this.x = x - radio;
 		this.y = y - radio;
