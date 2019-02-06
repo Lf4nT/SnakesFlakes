@@ -1,8 +1,9 @@
 package juego;
 
 import java.awt.Graphics;
+import java.awt.event.MouseListener;
 
-public abstract class Juego {
+public abstract class Juego implements MouseListener{
 
 	private Lienzo lienzo;
 	
