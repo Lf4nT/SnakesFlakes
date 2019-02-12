@@ -67,7 +67,7 @@ public class Pelota {
 	public int getRadio() {
 		return radio;
 	}
-
+	
 	public void paint(Graphics g) {
 		g.setColor(color);
 		g.fillOval((int) x, (int) y, diametro, diametro);

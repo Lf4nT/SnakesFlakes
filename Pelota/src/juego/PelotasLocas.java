@@ -13,6 +13,7 @@ public class PelotasLocas extends Juego {
 	private static final int MINVEL = 30;
 	private static final int MAXVEL = 200;
 	private static final Random r = new Random();
+	public static double j = 1;
 
 	private ArrayList<Pelota> pelotas;
 
@@ -25,7 +26,8 @@ public class PelotasLocas extends Juego {
 		int maxRadio = (int) (tamRef * 0.10);
 
 		for (int i = 0; i < numeroPelotas; i++) {
-			Color color = new Color(r.nextFloat(), r.nextFloat(), r.nextFloat());
+			
+			Color color = new Color(r.nextFloat(), r.nextFloat(), r.nextFloat(), (int)j);
 			int radio = r.nextInt(maxRadio - minRadio + 1) + minRadio;
 			int xymin = 10 + radio;
 			int xmax = lienzo.getWidth() - 10 - radio;
