@@ -3,7 +3,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
-public class pelota {
+public class Pelota {
 
 	private double vx;
 	private double vy;
@@ -13,7 +13,7 @@ public class pelota {
 	private Dimension marco;
 	private Color color;
 
-	public pelota(Color color, int radio, double x, double y, double d, double v, Dimension marco) {
+	public Pelota(Color color, int radio, double x, double y, double d, double v, Dimension marco) {
 		this.color = color;
 		this.x = x - radio;
 		this.y = y - radio;

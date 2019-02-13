@@ -6,15 +6,15 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class lienzo extends JPanel {
+public class Lienzo extends JPanel {
 
 	private Dimension d;
 	private Thread t;
-	private pelota pelota;
+	private Pelota pelota;
 
-	public lienzo(int w, int h) {
+	public Lienzo(int w, int h) {
 		d = new Dimension(w, h);
-		pelota = new pelota(Color.RED, 50, 100, 100, (float) Math.PI / 4, 100, d);
+		pelota = new Pelota(Color.RED, 50, 100, 100, (float) Math.PI / 4, 100, d);
 	}
 
 	@Override
