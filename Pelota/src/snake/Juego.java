@@ -1,9 +1,10 @@
-package juego;
+package snake;
 
 import java.awt.Graphics;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 
-public abstract class Juego implements MouseListener {
+public abstract class Juego implements MouseListener, KeyListener {
 
 	private Lienzo lienzo;
 

@@ -1,3 +1,4 @@
+package pelota;
 
 import java.awt.Color;
 import java.awt.Dimension;

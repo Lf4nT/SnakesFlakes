@@ -1,4 +1,4 @@
-package juego;
+package pelotaslocas;
 
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;

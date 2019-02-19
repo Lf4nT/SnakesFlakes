@@ -1,4 +1,4 @@
-package juego;
+package pelotaslocas;
 
 import java.awt.Color;
 import java.awt.Graphics;

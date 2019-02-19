@@ -1,7 +1,9 @@
-package juego;
+package snake;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
@@ -9,7 +11,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class Lienzo extends JPanel implements MouseListener {
+public class Lienzo extends JPanel implements MouseListener, KeyListener {
 
 	private Dimension d;
 	private Thread t;
@@ -22,6 +24,9 @@ public class Lienzo extends JPanel implements MouseListener {
 		buffer = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
 		g = buffer.createGraphics();
 		addMouseListener(this);
+		addKeyListener(this);
+		setFocusable(true);
+
 	}
 
 	@Override
@@ -30,7 +35,7 @@ public class Lienzo extends JPanel implements MouseListener {
 	}
 
 	public void iniciarAnimacion() {
-		juego = new PelotasLocas(this, 100);
+		juego = new Snake(this);
 		t = new Thread(() -> {
 			long t0 = System.nanoTime(), t1, t;
 			while (true) {
@@ -40,7 +45,6 @@ public class Lienzo extends JPanel implements MouseListener {
 				juego.siguiente(t);
 				juego.render(g);
 				paintComponent(getGraphics());
-//				repaint();
 			}
 		});
 		t.start();
@@ -74,5 +78,20 @@ public class Lienzo extends JPanel implements MouseListener {
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		juego.mouseReleased(e);
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		juego.keyPressed(e);
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		juego.keyReleased(e);
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		juego.keyTyped(e);
 	}
 }

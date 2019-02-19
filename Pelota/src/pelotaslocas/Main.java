@@ -1,4 +1,4 @@
-package juego;
+package pelotaslocas;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
