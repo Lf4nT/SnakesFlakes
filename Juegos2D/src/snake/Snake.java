@@ -27,9 +27,12 @@ public class Snake extends Juego {
 	private Point dir = DOWN;
 	private long lapso = 0;
 
-	Deque<Point> snake = new LinkedList<Point>();
-	Point comida = new Point();
-	Random r = new Random();
+	private Deque<Point> snake = new LinkedList<Point>();
+	private Point comida = new Point();
+	private int crecer = 0;
+	private int longitudCrecimiento = 5;
+
+	private Random r = new Random();
 
 	public Snake(Lienzo lienzo) {
 		super(lienzo);
@@ -55,9 +58,20 @@ public class Snake extends Juego {
 		lapso += ns;
 
 		if (lapso >= 100000000L) {
-			Point cola = snake.removeFirst();
+			Point cola;
 			Point cabeza = snake.getLast();
-			cola.setLocation(cabeza.x + dir.x, cabeza.y + dir.y);
+			if (crecer > 0) {
+				cola = new Point(cabeza.x + dir.x, cabeza.y + dir.y);
+				crecer--;
+				if (crecer == 0)
+					colocarComida();
+			} else {
+				cola = snake.removeFirst();
+				cola.setLocation(cabeza.x + dir.x, cabeza.y + dir.y);
+				if (cola.equals(comida)) {
+					crecer = longitudCrecimiento;
+				}
+			}
 			snake.addLast(cola);
 			lapso -= 100000000L;
 		}
@@ -76,33 +90,39 @@ public class Snake extends Juego {
 				g.setColor(Color.BLACK);
 			g.fillRect(p.x * L + M, p.y * L + M, LS, LS);
 		}
-		g.setColor(Color.GREEN);
-		g.fillRect(comida.x * L + M, comida.y * L + M, LS, LS);
-
+		if (crecer == 0) {
+			g.setColor(Color.GREEN);
+			g.fillRect(comida.x * L + M, comida.y * L + M, LS, LS);
+		}
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
 
 	}
 
@@ -120,17 +140,6 @@ public class Snake extends Juego {
 			break;
 		case (KeyEvent.VK_DOWN):
 			dir = DOWN;
-		case (KeyEvent.VK_A):
-			dir = LEFT;
-			break;
-		case (KeyEvent.VK_D):
-			dir = RIGHT;
-			break;
-		case (KeyEvent.VK_W):
-			dir = UP;
-			break;
-		case (KeyEvent.VK_S):
-			dir = DOWN;
 			break;
 		}
 
@@ -138,11 +147,13 @@ public class Snake extends Juego {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
 
 	}
 
