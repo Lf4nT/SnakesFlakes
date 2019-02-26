@@ -1,7 +1,8 @@
-package pelotaslocas;
+package dosenuno;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class PelotasLocas extends Juego {
 	}
 	
 	@Override
-	public void siguiente(long ns) {
+	public boolean siguiente(long ns) {
 		synchronized (pelotas) {
 			Iterator<Pelota> i = pelotas.iterator();
 			while (i.hasNext())
@@ -64,7 +65,7 @@ public class PelotasLocas extends Juego {
 					i.remove();
 			}
 		}
-		
+		return false;
 	}
 
 	@Override
@@ -128,6 +129,24 @@ public class PelotasLocas extends Juego {
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -8,7 +8,6 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
-@SuppressWarnings("serial")
 public class Lienzo extends JPanel implements MouseListener {
 
 	private Dimension d;

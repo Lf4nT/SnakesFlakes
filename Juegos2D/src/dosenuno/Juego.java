@@ -1,4 +1,4 @@
-package snake;
+package dosenuno;
 
 import java.awt.Graphics;
 import java.awt.event.KeyListener;
@@ -16,7 +16,7 @@ public abstract class Juego implements MouseListener, KeyListener{
 		return lienzo;
 	}
 	
-	public abstract void siguiente(long ns);
+	public abstract boolean siguiente(long ns);
 	
 	public abstract void render(Graphics g);
 	
