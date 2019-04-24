@@ -1,11 +1,11 @@
 package pelota;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-@SuppressWarnings("serial")
 public class Lienzo extends JPanel {
 
 	private Dimension d;
